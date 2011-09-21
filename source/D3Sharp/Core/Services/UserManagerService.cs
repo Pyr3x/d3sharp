@@ -36,8 +36,10 @@ namespace D3Sharp.Core.Services
             // Note that the request has an ObjectId, but it is never referenced later in the
             // capture.. suggesting that this doesn't create a specific object, or is maybe mapped
             // to a static identifier for handling future requsts by the client to this service
-            var builder = bnet.protocol.user_manager.SubscribeToUserManagerResponse.CreateBuilder();
-            done(builder.Build());
+            
+            // This Packet is Crashing a large number of clients and has been commented out to resolve the issue. - Pyr3x
+            // var builder = bnet.protocol.user_manager.SubscribeToUserManagerResponse.CreateBuilder();
+            // done(builder.Build());
         }
 
         public override void ReportPlayer(IRpcController controller, ReportPlayerRequest request, Action<ReportPlayerResponse> done)
